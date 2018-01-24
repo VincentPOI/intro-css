@@ -1,12 +1,11 @@
-.wrapper {
+.container {
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   text-align: center;
 }
 
-.wrapper > * {
+.container>* {
   padding: 10px;
-  flex: 1 100%;
 }
 
 body {
@@ -33,26 +32,33 @@ footer {
   background-color: lightgreen;
 }
 
-@media all and (min-width: 600px) {
-  .aside {
-    flex: 1 auto;
+@media all and (min-width: 600px) and (max-width:800px) {
+  .left-aside {
+    flex: 1 1 0;
+  }
+  .right-aside {
+    flex: 1 1 0;
   }
 }
 
 @media all and (min-width: 800px) {
-  .main {
-    flex: 3 0px;
+  header {
+    flex: 1 1 100%;
   }
-  .left-aside {
-    order: 1;
-  }
-  .main {
+  main {
+    flex: 1 1 0;
     order: 2;
   }
+  .left-aside {
+    flex: 1 1 0;
+    order: 1;
+  }
   .right-aside {
+    flex: 1 1 0;
     order: 3;
   }
-  .footer {
+  footer {
     order: 4;
+    flex: 1 1 100%;
   }
 }
